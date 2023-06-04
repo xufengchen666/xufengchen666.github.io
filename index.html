@@ -1,13 +1,17 @@
-<html lang="en">  
-  
-<head>  
-    <meta charset="UTF-8">  
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Document</title>  
-    <style>  
-    body {  
-            display: flex;  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最终作业</title>
+    <style>
+        *{ /* 实现上和左右到头 */
+            margin:0 ;
+            padding:0 ;
+        }
+        body {  
+            
             justify-content: center;  
             align-items: center;  
             font-size: 30xp;  
@@ -32,59 +36,92 @@
             }  
         }  
 
+        .aa {
+            width: 100%;
+            height: 100px;
+            background-color:#ffffff ;
+
+        }
+        .a{
+            width: 1170px;
+            height: 100px;
+            background-color:#ffffff; /* #ffffff */
+            margin: auto; /* 盒子水平方向居中 */
+            line-height:100px ; /* 文字垂直方向居中 */
+        }
+        .a img{
+            vertical-align: middle; /* 图片垂直方向居中 */
+
+        }
+        .a  a{
+
+            margin-left: 42px;
+            color: #333333;
+            text-decoration: none; /* 去掉文字下划线 */
+
+        }
+
+        .a .one{
+           color: #53cac3;
+        }
+        .a .atwo{
+            float: right;
+            margin-top: 24px;
+        }
+        .b{
+            width: 100%;
+            height: 38px;
+            color: #fdf8e3;
+            border:1px solid #ffe7b8;
+            font-size: 12px;
+            color: #b05a2e;
+            line-height:38px ;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+<a ></a>
+</head>
+<body>
+    <div class="aa">
+        <div class="a">
+        <img src="page/1.jpg" alt="">
+        <a href=""class="aone">首页</a>
+        <a href="">求职</a>
+        <a href="">扫码登陆</a>
+        <a href="">道具</a>
+        <img class="atwo" src="page/2.jpg" alt="">
+        </div>
+    </div>
     
-       /*  body {  
-            margin: 0;  
-            padding: 0;  
-            height: 100vh;  
-            display: flex;  
-            align-items: center;  
-            justify-content: center;  
-            background-color: #ececec;  
-            background-size: cover;  
-        }   */
-  
-        /* #main {  
-            width: 1200px;  
-            height: 300px;  
-            line-height: 300px;  
-            text-align: center;  
-            background-color: #ececec;  
-            border-radius: 70px;  
-            box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.5) 10px 10px 20px rgba(70, 70, 70, .12);  
-        }    */
-   
-        #clock {  
-            font-size: 100px;  
-            /* -webkit-text-stroke: 3px #fff; //加阴影  */
-            color: #000;  
-            letter-spacing: 25px;  
-        }  
-    </style>  
-</head>  
-  
-<body>  
-    <div id="main">  
-        <div id="clock">12:00:00</div>  
-    </div>  
-    <script>  
-        let oClock = document.querySelector('#clock')  
-        let addZero = (num) => {  
-            if (num >= 10) {  
-                return num;  
-            } else {  
-                return `0${num}`;  
-            }  
-        }  
-        let updateTime = () => {  
-            let now = new Date()  
-            let time = addZero(now.getHours()) + ":" +  
-                addZero(now.getMinutes()) + ":" + addZero(now.getSeconds());  
-            oClock.innerText = time;  
-        }  
-        updateTime();  
-        setInterval(updateTime, 1000);  
-    </script>  
-</body>  
-  
-</html>  
+    <div class="b">
+        <marquee behavior="" direction="">—键注册BOSs直聘与Boss直接开始沟通~</marquee> <!-- 滚动 -->
+        
+    </div>
+    <div class="c"></div>
+    <div class="d"></div>
+    <div class="e"></div>
+    <div class="f"></div>
+    <div class="g"></div>
+    <div class="h"></div>
+    <div class="i"></div>
+    <div class="j"></div>
+
+    
+
+
+</body>
+</html>
