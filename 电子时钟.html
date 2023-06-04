@@ -1,0 +1,90 @@
+<html lang="en">  
+  
+<head>  
+    <meta charset="UTF-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Document</title>  
+    <style>  
+    body {  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            font-size: 30xp;  
+            height: 100vh;  
+            background-image: linear-gradient(125deg, #1abc9c, #3498db, #e74c3c, #9b59b6, #f39c12);  
+            color: #fff;  
+            background-size: 400%;  
+            animation: bgmove 20s infinite;  
+        }  
+  
+        @keyframes bgmove {  
+            0% {  
+                background-position: 0% 50%;  
+            }  
+  
+            50% {  
+                background-position: 100% 50%;  
+            }  
+  
+            0% {  
+                background-position: 0% 50%;  
+            }  
+        }  
+
+    
+       /*  body {  
+            margin: 0;  
+            padding: 0;  
+            height: 100vh;  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            background-color: #ececec;  
+            background-size: cover;  
+        }   */
+  
+        /* #main {  
+            width: 1200px;  
+            height: 300px;  
+            line-height: 300px;  
+            text-align: center;  
+            background-color: #ececec;  
+            border-radius: 70px;  
+            box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.5) 10px 10px 20px rgba(70, 70, 70, .12);  
+        }    */
+   
+        #clock {  
+            font-size: 100px;  
+            /* -webkit-text-stroke: 3px #fff; //加阴影  */
+            color: #000;  
+            letter-spacing: 25px;  
+        }  
+    </style>  
+</head>  
+  
+<body>  
+    <div id="main">  
+        <div id="clock">12:00:00</div>  
+    </div>  
+    <script>  
+        let oClock = document.querySelector('#clock')  
+        let addZero = (num) => {  
+            if (num >= 10) {  
+                return num;  
+            } else {  
+                return `0${num}`;  
+            }  
+        }  
+        let updateTime = () => {  
+            let now = new Date()  
+            let time = addZero(now.getHours()) + ":" +  
+                addZero(now.getMinutes()) + ":" + addZero(now.getSeconds());  
+            oClock.innerText = time;  
+        }  
+        updateTime();  
+        setInterval(updateTime, 1000);  
+    </script>  
+</body>  
+  
+</html>  
