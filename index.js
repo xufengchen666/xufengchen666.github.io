@@ -1,3 +1,63 @@
+window.onload = function () {
+    //屏蔽键盘事件
+    document.onkeydown = function () {
+      var e = window.event || arguments[0];
+      //F12
+      if (e.keyCode == 123) {
+        return false;
+      }
+      //Ctrl+Shift+I
+      else if ((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)) {
+        return false;
+      }
+      //Shift+F10
+      else if ((e.shiftKey) && (e.keyCode == 121)) {
+        return false;
+      }
+      //Ctrl+U
+      else if ((e.ctrlKey) && (e.keyCode == 85)) {
+        return false;
+      }
+    };
+
+    //屏蔽鼠标右键
+    document.oncontextmenu = function () {
+      return false;
+    }
+
+
+    // 显示弹窗
+    modal.style.display = "block";
+ 
+
+}
+
+
+// 获取弹窗元素和关闭按钮元素
+var modal = document.getElementById("myModal");
+var closeBtn = document.getElementsByClassName("close")[0];
+
+// 当页面加载完成时显示弹窗
+window.onload = function () {
+    modal.style.display = "block";
+}
+
+// 当用户点击关闭按钮时，隐藏弹窗
+closeBtn.onclick = function () {
+    modal.style.display = "none";
+}
+
+// 当用户点击弹窗之外的区域时，隐藏弹窗
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+
+
 
 ////////////////////////////////////以下是
 function performSearch() {
@@ -133,40 +193,5 @@ window.onfocus = function () {
 
 
 
-////////////////////////////////////以下是防偷
- window.onload = function () {
-    //屏蔽键盘事件
-    document.onkeydown = function () {
-      var e = window.event || arguments[0];
-      //F12
-      if (e.keyCode == 123) {
-        return false;
-      }
-      //Ctrl+Shift+I
-      else if ((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)) {
-        return false;
-      }
-      //Shift+F10
-      else if ((e.shiftKey) && (e.keyCode == 121)) {
-        return false;
-      }
-      //Ctrl+U
-      else if ((e.ctrlKey) && (e.keyCode == 85)) {
-        return false;
-      }
-    };
 
-    //屏蔽鼠标右键
-    document.oncontextmenu = function () {
-      return false;
-    }
-
-
-    // 显示弹窗
-    modal.style.display = "block";
-  } 
-
-
-
-////////////////////////////////////
 
