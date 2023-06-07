@@ -82,44 +82,75 @@ let updateTime = () => {
     oClock.innerText = time;
 }
 updateTime();
-setInterval(updateTime, 1000); 
-
-
-window.onload = function () {
-    //屏蔽键盘事件
-    document.onkeydown = function () {
-      var e = window.event || arguments[0];
-      //F12
-      if (e.keyCode == 123) {
-        return false;
-      }
-      //Ctrl+Shift+I
-      else if ((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)) {
-        return false;
-      }
-      //Shift+F10
-      else if ((e.shiftKey) && (e.keyCode == 121)) {
-        return false;
-      }
-      //Ctrl+U
-      else if ((e.ctrlKey) && (e.keyCode == 85)) {
-        return false;
-      }
-    };
-
-    //屏蔽鼠标右键
-    document.oncontextmenu = function () {
-      return false;
-    }
-  } 
+setInterval(updateTime, 1000);
 
 
 
-  var z = document.querySelector('.z');
-  function randomPosition() {
+
+
+
+
+
+var z = document.querySelector('.z');
+function randomPosition() {
     var top = Math.random() * window.innerHeight;
     var left = Math.random() * window.innerWidth;
-    z.style.top = top + 'px'; 
+    z.style.top = top + 'px';
     z.style.left = left + 'px';
-  }
-  setInterval(randomPosition, 1000);
+}
+setInterval(randomPosition, 1000);
+
+
+
+
+
+
+var pageTitle = document.getElementById("pageTitle");
+var originalTitle = pageTitle.innerHTML;
+var newTitle = "你给我回来！！！";
+
+// 当用户离开页面时，修改标题为新标题
+window.onblur = function () {
+    pageTitle.innerHTML = newTitle;
+}
+
+// 当用户返回页面时，恢复原始标题
+window.onfocus = function () {
+    pageTitle.innerHTML = originalTitle;
+}
+
+
+
+// 获取弹窗元素和关闭按钮元素
+var modal = document.getElementById("myModal");
+var closeBtn = document.getElementsByClassName("close")[0];
+
+// 当页面加载完成时显示弹窗
+window.onload = function () {
+    modal.style.display = "block";
+}
+
+// 当用户点击关闭按钮时，隐藏弹窗
+closeBtn.onclick = function () {
+    modal.style.display = "none";
+}
+
+// 当用户点击弹窗之外的区域时，隐藏弹窗
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
