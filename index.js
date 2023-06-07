@@ -1,3 +1,5 @@
+
+////////////////////////////////////以下是
 function performSearch() {
     const keyword = document.getElementById('search').value.trim();
     if (keyword === '') {
@@ -22,11 +24,11 @@ searchInput.onblur = function () {
 };
 /* 以上要实现当鼠标点击搜索框时，搜索框中的提示文本消失 */
 
+////////////////////////////////////以下是
 
 
 
-
-
+////////////////////////////////////以下是双击可以删除
 var toolList = document.querySelectorAll('#content .skill>div');
 for (let i = 0; i < toolList.length; i++) {
     toolList[i].onmouseover = function () {
@@ -43,6 +45,10 @@ for (let i = 0; i < toolList.length; i++) {
         this.remove();
     }
 }
+
+////////////////////////////////////
+
+////////////////////////////////////以下是页脚绑定事件
 
 // 以下给页脚绑定事件顺序不能变！！！！！！1
 var footer = document.querySelector('#footer');
@@ -64,9 +70,12 @@ for (let i = 0; i < navList.length; i++) {
         this.classList.add('active');
     }
 }
+////////////////////////////////////
 
 
 
+
+////////////////////////////////////以下是时间
 let oClock = document.querySelector('#clock')
 let addZero = (num) => {
     if (num >= 10) {
@@ -84,13 +93,13 @@ let updateTime = () => {
 updateTime();
 setInterval(updateTime, 1000);
 
+////////////////////////////////////
 
 
 
 
 
-
-
+////////////////////////////////////以下是随机移动
 var z = document.querySelector('.z');
 function randomPosition() {
     var top = Math.random() * window.innerHeight;
@@ -99,11 +108,11 @@ function randomPosition() {
     z.style.left = left + 'px';
 }
 setInterval(randomPosition, 1000);
+////////////////////////////////////////
 
 
 
-
-
+/////////////////////以下是改变tlitle
 
 var pageTitle = document.getElementById("pageTitle");
 var originalTitle = pageTitle.innerHTML;
@@ -119,38 +128,45 @@ window.onfocus = function () {
     pageTitle.innerHTML = originalTitle;
 }
 
+////////////////////////////////////
 
 
-// 获取弹窗元素和关闭按钮元素
-var modal = document.getElementById("myModal");
-var closeBtn = document.getElementsByClassName("close")[0];
 
-// 当页面加载完成时显示弹窗
-window.onload = function () {
-    modal.style.display = "block";
-}
 
-// 当用户点击关闭按钮时，隐藏弹窗
-closeBtn.onclick = function () {
-    modal.style.display = "none";
-}
+////////////////////////////////////以下是防偷
+ window.onload = function () {
+    //屏蔽键盘事件
+    document.onkeydown = function () {
+      var e = window.event || arguments[0];
+      //F12
+      if (e.keyCode == 123) {
+        return false;
+      }
+      //Ctrl+Shift+I
+      else if ((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)) {
+        return false;
+      }
+      //Shift+F10
+      else if ((e.shiftKey) && (e.keyCode == 121)) {
+        return false;
+      }
+      //Ctrl+U
+      else if ((e.ctrlKey) && (e.keyCode == 85)) {
+        return false;
+      }
+    };
 
-// 当用户点击弹窗之外的区域时，隐藏弹窗
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    //屏蔽鼠标右键
+    document.oncontextmenu = function () {
+      return false;
     }
-}
+
+
+    // 显示弹窗
+    modal.style.display = "block";
+  } 
 
 
 
-
-
-
-
-
-
-
-
-
+////////////////////////////////////
 
