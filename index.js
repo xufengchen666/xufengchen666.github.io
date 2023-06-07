@@ -112,3 +112,14 @@ window.onload = function () {
       return false;
     }
   } 
+
+
+
+  var z = document.querySelector('.z');
+  function randomPosition() {
+    var top = Math.random() * window.innerHeight;
+    var left = Math.random() * window.innerWidth;
+    z.style.top = top + 'px'; 
+    z.style.left = left + 'px';
+  }
+  setInterval(randomPosition, 1000);
