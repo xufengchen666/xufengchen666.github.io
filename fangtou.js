@@ -14,7 +14,19 @@ function disableCtrlUS() {
           // 阻止默认行为
           event.preventDefault();
       }
+      if (event.ctrlKey && event.key === "s") {
+        // 阻止默认行为
+        event.preventDefault();
+        // 阻止事件冒泡和捕获
+        event.stopPropagation();
+        return false;
+    }
   });
+
+  window.addEventListener("beforeunload", function(event) {
+    // 显示提示框，阻止用户保存页面
+    event.returnValue = "离开页面将丢失未保存的数据";
+});
 }
 
 function continueExecution() {
@@ -26,7 +38,19 @@ function continueExecution() {
             // 阻止默认行为
             event.preventDefault();
         }
+
+        if (event.ctrlKey && event.key === "s") {
+          // 阻止默认行为
+          event.preventDefault();
+          // 阻止事件冒泡和捕获
+          event.stopPropagation();
+          return false;
+      }
     });
+    window.addEventListener("beforeunload", function(event) {
+      // 显示提示框，阻止用户保存页面
+      event.returnValue = "离开页面将丢失未保存的数据";
+  });
   }
   // 这是你希望在优先操作完成后继续执行的代码
   console.log("继续执行其他操作");
