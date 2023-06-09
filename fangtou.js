@@ -18,6 +18,16 @@ function disableCtrlUS() {
 }
 
 function continueExecution() {
+  function disableCtrlUS() {
+    // 捕捉键盘按下事件
+    document.addEventListener("keydown", function(event) {
+        // 按下 Ctrl+U 或 Ctrl+S
+        if ((event.ctrlKey && event.key === "u") || (event.ctrlKey && event.key === "s")) {
+            // 阻止默认行为
+            event.preventDefault();
+        }
+    });
+  }
   // 这是你希望在优先操作完成后继续执行的代码
   console.log("继续执行其他操作");
 }
