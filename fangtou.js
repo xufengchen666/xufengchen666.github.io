@@ -34,9 +34,9 @@ window.onload = function () {
 }
 
 
-document.addEventListener('keydown', function(event) {
+/* document.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.key === 'u') {
     event.preventDefault(); // 阻止默认行为
     alert("禁止查看页面源代码");
   }
-});
+}); */
